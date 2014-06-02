@@ -18,6 +18,7 @@
             $this->action    = 'post_attachment_action';
             $this->nonce     = 'post_attachment_nonce';
             $this->post_type = 'post';
+            $this->context   = 'advanced';
 
             wp_register_script('post-attachment-js',
                                plugins_url('js/post-attachment.js', __FILE__),
