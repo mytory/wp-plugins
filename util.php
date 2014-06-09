@@ -150,3 +150,11 @@ function has_image_extension ($filename) {
         return false;
     }
 }
+
+if( ! function_exists('plugins_url') ){
+    function plugins_url($path, $file_path){
+        $tail_path = str_replace($_SERVER['DOCUMENT_ROOT'], '', dirname($file_path));
+        $url = '//' . $_SERVER['SERVER_NAME'] . '/' . $tail_path . '/' . $path;
+        return $url;
+    }
+}
