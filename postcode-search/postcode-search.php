@@ -16,7 +16,7 @@ if(function_exists('wp_register_script')){
             array('postcode-search'));
 
         // 워드프레스를 사용하는 게 아니면 아래처럼 변수 세팅을 해 줘야 한다.
-        // var postcode_search = {"ajaxurl":"http:\/\/marxism.or.kr\/2014\/wp-content\/plugins\/postcode-search\/search.php"};
+        // var postcode_search = {"ajaxurl":"http://marxism.or.kr/2014/wp-content/plugins/postcode-search/search.php"};
         wp_localize_script('postcode-search', 'postcode_search',
             array('ajaxurl' => Postcode_Search::get_endpoint()));
     }
