@@ -1,9 +1,10 @@
 <?php
-
-    wp_register_script('allthegate', 'http://www.allthegate.com/plugin/AGSWallet_utf8.js');
-
-    function allthegate_hidden_inputs () {
-        include plugin_dir_path(__FILE__) . '/hidden-inputs.php';
+    if(function_exists('wp_register_script')){
+        wp_register_script('allthegate', 'http://www.allthegate.com/plugin/AGSWallet_utf8.js');
     }
 
-    include plugin_dir_path(__FILE__) . '/functions.php';
+    function allthegate_hidden_inputs () {
+        include dirname(__FILE__) . '/hidden-inputs.php';
+    }
+
+    include dirname(__FILE__) . '/functions.php';

@@ -119,7 +119,7 @@
 <head>
     <meta charset="UTF-8">
 </head>
-<body onload='javascript:document.forms["result"].submit()'>
+<body onload='document.forms["result"].submit()'>
     <form name='result' action='<?= $_POST['return-url'] ?>' method='post'>
         <?php foreach ($_POST as $key => $val): ?>
             <input type='hidden' name='<?= htmlspecialchars($key) ?>' value='<?= htmlspecialchars($val) ?>'>
