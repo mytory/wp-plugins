@@ -56,8 +56,9 @@ $parsed = title_parse($title);
 return $parsed['title'];
 }
 
-function template ($path, $args=array()) {
-    extract($args);
+function template ($path, $__args = array()) {
+    extract($__args);
+    if (!preg_match('/\..+$/', $path)) $path .= '.php';
     include $path;
 }
 
