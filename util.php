@@ -79,11 +79,7 @@ function select_marker ($s, $have_jongsung, $no_jongsung) {
 }
 
 function generate_order_id () {
-    $session_id = session_id();
-    if (empty($session_id)) {
-        session_start();
-    }
-    return md5(session_id() . date('YmdHis'));
+    return date('YmdHis') . '-' . rand(100, 999);
 }
 
 function add_commas ($num) {
