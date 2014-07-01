@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
             on_select: function (item) {
                 $head.val(item.head);
                 $tail.val(item.tail);
-                $addr.val(item.addr);
+                $addr.val(item.addr_trimmed);
                 $search.slideUp();
             }
         })

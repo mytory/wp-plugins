@@ -13,7 +13,8 @@
      *           실패 = {success: 0, msg: <오류 메시지 문자열>}
      *        검색결과 = {head: <우편번호 앞 세자리>,
      *                   tail: <우편번호 뒷 세자리>,
-     *                   addr: <주소>}
+     *                   addr: <주소>,
+     *                   addr_trimmed: <주소에서 뒤에 붙은 범위(e.g. 101~105동)를 뺀 것>}
      */
     include 'postcode-finder.class.php';
 
@@ -31,6 +32,7 @@
             list($head, $tail) = sscanf($row[COL_POST_CODE], "%3s%3s");
             $result['rows'][] = array('head' => $head,
                                       'tail' => $tail,
+                                      'addr_trimmed' => preg_replace('/(?:[^\s]+)~(?:[^\s]+)$/u', '', $row[COL_FULL_ADDR]),
                                       'addr' => $row[COL_FULL_ADDR]);
         }
         $result['count'] = $count;
