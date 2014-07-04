@@ -162,7 +162,7 @@ if( ! function_exists('plugins_url') ){
  * @param  string|array $db_value DB에 저장된 값 혹은 값들의 배열
  */
 function attr_checked($form_value, $db_value){
-    if(if_equal_or_in($form_value, $db_value)){
+    if(is_equal_or_in($form_value, $db_value)){
         echo 'checked';
     }
 }
@@ -173,7 +173,7 @@ function attr_checked($form_value, $db_value){
  * @param  string|array $db_value DB에 저장된 값 혹은 값들의 배열
  */
 function attr_selected($form_value, $db_value){
-    if(if_equal_or_in($form_value, $db_value)){
+    if(is_equal_or_in($form_value, $db_value)){
         echo 'selected';
     }
 }
