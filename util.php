@@ -160,21 +160,19 @@ if( ! function_exists('plugins_url') ){
  * input:checkbox나 input:radio 에서 값을 비교해 checked를 출력.
  * @param  string       $form_value 현재 input의 value
  * @param  string|array $db_value DB에 저장된 값 혹은 값들의 배열
- * @return boolean
  */
-function if_checked($form_value, $db_value){
+function attr_checked($form_value, $db_value){
     if(if_equal_or_in($form_value, $db_value)){
         echo 'checked';
     }
 }
 
 /**
- * selectbox 에서 값을 비교해 checked를 출력.
+ * selectbox 에서 값을 비교해 selected를 출력.
  * @param  string       $form_value 현재 select > option의 value
  * @param  string|array $db_value DB에 저장된 값 혹은 값들의 배열
- * @return boolean
  */
-function if_selected($form_value, $db_value){
+function attr_selected($form_value, $db_value){
     if(if_equal_or_in($form_value, $db_value)){
         echo 'selected';
     }
@@ -188,7 +186,7 @@ function if_selected($form_value, $db_value){
  * @param  string|array $db_value DB에 저장된 값 혹은 값들의 배열
  * @return boolean
  */
-function if_equal_or_in($form_value, $db_value){
+function is_equal_or_in($form_value, $db_value){
     if(is_array($db_value)){
         return in_array($form_value, $db_value);
     }else{
